@@ -1,3 +1,6 @@
+Original was limited to 30 issues per page (as per Github's pagination). Modified to include all issues in a single report.
+Tweaks to report format (see sample below).
+
 ## Purpose
 
 This simple little tool generates a static HTML report of issues for a Github repo. This is useful if you want to share
