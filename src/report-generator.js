@@ -13,7 +13,7 @@ function getReportName(repo, owner) {
     '_',
     repo,
     '-',
-    dateFormat(new Date(), 'yyyymdd-HHMMss'),
+    dateFormat(new Date(), 'yyyymmdd-HHMMss'),
     '.html'
   ].join('');
 }
@@ -26,7 +26,7 @@ module.exports = {
   generate: function (config) {
 
     var options = {
-      uri: 'https://api.github.com/repos/' + config.owner + '/' + config.repo + '/issues',
+      uri: 'https://api.github.com/repos/' + config.owner + '/' + config.repo + '/issues?per_page=1000',
       headers: {
         'User-Agent': 'github-issue-reports'
       }

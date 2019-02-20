@@ -16,13 +16,15 @@ html
                         th Title
                         th Tags
                         th Created
+                        th Age(Days)
                 tbody
                     each issue in openIssues
                         tr
                             td= issue.number
                             td: a(href=issue.url)= issue.title
                             td= issue.labels.join(', ')
-                            td= issue.createdAt.format('MMMM Do, YYYY')
+                            td= issue.createdAt.format('YYYYMMDD')
+                            td= Math.round((runDate - issue.createdAt) / 24 / 60 /60 / 1000)
 
             h2 Closed Issues&nbsp;
                 small (#{closedIssues.length})
